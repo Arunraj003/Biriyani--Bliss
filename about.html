@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biriyani Bliss</title>
+    <link rel="icon" type="logo" href="img/biriyani website logo png.jpg">
+    <!-- linking css  -->
+    <link rel="stylesheet" href="index.css">
+    <!-- linking cdn font awesome here  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Header starts here -->
+    <div class="navbar">
+        <div class="logo">Biriyani Bliss</div>
+        <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="foods.html">Our Foods</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </div>
+    <!-- Header ends here -->
+
+    <!-- foods starts here -->
+
+    <section id="contact">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Biriyani Bliss Project is a culinary venture that aims to redefine the experience of enjoying one of the
+                most beloved and iconic dishes in the world – biryani. With a passion for authenticity and a commitment
+                to delivering an unforgettable dining experience, the Biriyani Bliss Project takes pride in sourcing the
+                finest ingredients and employing traditional cooking techniques to create a symphony of flavors in every
+                bite. Our skilled chefs blend aromatic spices and premium rice with succulent meats or flavorful
+                vegetables, crafting biryanis that reflect the rich culinary heritage of this classic dish. Beyond just
+                a meal, the Biriyani Bliss Project seeks to transport diners to a world of gastronomic delight, where
+                the tantalizing aroma and exquisite taste of biryani become a celebration of culture and tradition.
+                Whether you are a biryani enthusiast or a first-time adventurer, the Biriyani Bliss Project invites you
+                to savor the magic of this timeless dish, promising an experience that goes beyond the plate and lingers
+                in your memory. Welcome to a journey of biryani bliss!</p>
+            <img src="img/ab.jpg" alt="about image">
+        </div>
+    </section>
+    <!-- foods ends here -->
+    <!-- footer starts here  -->
+    <footer>
+        <div class="main-title">Biriyani Bliss</div>
+        <div class="social-media">
+            <h2>About us</h2>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <h1>Share Feedbacks</h1>
+                <input type="text" name="Name" placeholder="Enter Name" required data-aos="fade-left"
+                    data-aos-delay="250">
+                <input type="email" name="Email" placeholder="Enter Email" required data-aos="fade-left"
+                    data-aos-delay="300">
+                <textarea name="Message" rows="6" placeholder="Your Message" data-aos="fade-left"
+                    data-aos-delay="350"></textarea>
+                <button type="submit" class="btn btn2" data-aos="fade-left" data-aos-delay="350">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <div class="copyright">
+            <h2>Copyrighted and Made by Arun Raj &copy; 2024</h2>
+            <p>Thanks for visiting our website Kindly Share your feedback and thought about our services through above
+                Form.</p>
+        </div>
+    </footer>
+
+    <!-- footer ends here  -->
+    <!-- scripting links here  AOS links here -->
+    <script src="index.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: false,
+        });
+    </script>
+
+    <script>
+        // form data here using google forms and this script is copied for getting data from users
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwdq_HS8RdCeTbfTYjelTR-Gz_t7xKSxvUqu-cVGKLrLkWdXNBx0yBFk7kG10WgR5Vr/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biriyani Bliss -- Our Foods</title>
+    <link rel="icon" type="logo" href="img/biriyani website logo png.jpg">
+    <!-- linking css  -->
+    <link rel="stylesheet" href="index.css">
+    <!-- linking cdn font awesome here  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Header starts here -->
+    <div class="navbar">
+        <div class="logo">Biriyani Bliss</div>
+        <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="index.html">Home</a>
+            <a href="foods.html">Our Foods</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+    <!-- Header ends here -->
+    <section id="services">
+        <div class="sideheading">
+            <p> Our Services</p>
+        </div>
+        <div class="container">
+            <div class="service">
+                <h1>Fast Delivery</h1>
+                <i class="fa-solid fa-truck"></i>
+            </div>
+            <div class="service">
+                <h1>Events & Parties</h1>
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+
+            <div class="service">
+                <h1> 20 Locations Available</h1>
+                <i class="fa-solid fa-location-crosshairs"></i>
+            </div>
+        </div>
+    </section>
+    <service id="service-container">
+        <div>
+            <h1>Fast Delivery</h1>
+            <p>At Fast Delivery Biriyani Bliss, we take pride in bringing the unparalleled joy of authentic biryani
+                straight to your doorstep with a commitment to speed and efficiency. Our mission is to redefine
+                convenience without compromising on the rich flavors and quality that make biryani an everlasting
+                culinary delight. With a seamless ordering process and a fleet of dedicated delivery professionals,
+                we ensure that your hot and flavorful biryani is delivered swiftly, preserving its freshness and
+                aromatic essence. Whether you're a busy professional seeking a quick and satisfying meal or a group
+                of friends craving a delightful feast, Fast Delivery Biriyani Bliss is your go-to destination for a
+                prompt and delectable biryani experience. Embrace the convenience without sacrificing the essence -
+                because great biryani should not only be savored but also enjoyed at your pace. Fast, reliable, and
+                always delicious - that's the promise of Fast Delivery Biriyani Bliss.</p>
+            <a href="foods.html">Order Now</a>
+        </div>
+
+        <div>
+            <h1>Events</h1>
+            <p>Biriyani Bliss Events is dedicated to curating unforgettable culinary experiences centered around the
+                aromatic and flavorful world of biryani. From private celebrations to corporate gatherings, our events
+                promise to elevate any occasion with the exquisite taste of this timeless dish. Picture a wedding
+                reception adorned with a biryani buffet, each variant telling a unique story of tradition and spice. Our
+                catering services bring the warmth of biryani to birthdays, anniversaries, and special family reunions,
+                creating lasting memories through the joy of communal dining.
+
+                For corporate events, consider a Biryani Bliss Lunch and Learn, where team building is fueled by the
+                shared love for this culinary masterpiece. We also offer live biryani cooking demonstrations, turning
+                any gathering into an interactive and engaging experience. Our pop-up events showcase the diverse
+                regional variations of biryani, allowing guests to embark on a flavorful journey across India.
+                Biriyani Bliss Events is not just about food; it's about crafting moments that linger in the hearts of
+                your guests. Let us turn your next event into a celebration of culture, community, and, of course, the
+                blissful indulgence of biryani.</p>
+            <a href="foods.html">Order Now</a>
+        </div>
+    </service>
+
+
+    <!-- services ends here -->
+    <!-- footer starts here  -->
+    <footer>
+        <div class="main-title">Biriyani Bliss</div>
+        <div class="social-media">
+            <h2>Connect us</h2>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <h1>Share Feedbacks</h1>
+                <input type="text" name="Name" placeholder="Enter Name" required data-aos="fade-left"
+                    data-aos-delay="250">
+                <input type="email" name="Email" placeholder="Enter Email" required data-aos="fade-left"
+                    data-aos-delay="300">
+                <textarea name="Message" rows="6" placeholder="Your Message" data-aos="fade-left"
+                    data-aos-delay="350"></textarea>
+                <button type="submit" class="btn btn2" data-aos="fade-left" data-aos-delay="350">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <div class="copyright">
+            <h2>Copyrighted and Made by Arun Raj &copy; 2024</h2>
+            <p>Thanks for visiting our website Kindly Share your feedback and thought about our services through above
+                Form.</p>
+        </div>
+    </footer>
+
+    <!-- footer ends here  -->
+    <!-- scripting links here  AOS links here -->
+    <script src="index.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: false,
+        });
+    </script>
+
+    <script>
+        // form data here using google forms and this script is copied for getting data from users
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwdq_HS8RdCeTbfTYjelTR-Gz_t7xKSxvUqu-cVGKLrLkWdXNBx0yBFk7kG10WgR5Vr/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>
